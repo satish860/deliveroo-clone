@@ -1,5 +1,12 @@
 import { React, useEffect } from "react";
-import { View, Text, SafeAreaView, Image, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import {
   ChevronDownIcon,
   UserIcon,
@@ -7,6 +14,7 @@ import {
   MagnifyingGlassIcon,
 } from "react-native-heroicons/solid";
 import Categories from "./components/Categories";
+import FeaturedRow from "./components/FeaturedRow";
 
 function HomeScreen({ navigation, route }) {
   useEffect(() => {
@@ -16,7 +24,7 @@ function HomeScreen({ navigation, route }) {
   }, []);
 
   return (
-    <SafeAreaView className="bg-white pt-9">
+    <SafeAreaView className="bg-white pt-9 flex-1">
       {/* Header */}
       <View className="flex-row space-x-2 pb-4 px-2">
         <Image
@@ -52,9 +60,27 @@ function HomeScreen({ navigation, route }) {
           color="#00CCBB"
         ></AdjustmentsVerticalIcon>
       </View>
-      <View>
-         <Categories/>
-      </View>
+      <ScrollView>
+        <View>
+          <View>
+            <Categories />
+          </View>
+          <View>
+            <FeaturedRow
+              title="Featured"
+              description="Paid Placement from our partner"
+            ></FeaturedRow>
+            <FeaturedRow
+              title="Tasty Discounts"
+              description="Everyone been enjoying these juicy discounts"
+            ></FeaturedRow>
+            <FeaturedRow
+              title="Offers near You!"
+              description="Why not support your local resturant tonight!"
+            ></FeaturedRow>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
