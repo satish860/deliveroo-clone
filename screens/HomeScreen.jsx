@@ -4,10 +4,8 @@ import {
   Text,
   SafeAreaView,
   Image,
-  StyleSheet,
-  StatusBar,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { ChevronDownIcon,UserIcon } from "react-native-heroicons/outline";
 
 function HomeScreen({ navigation, route }) {
   useEffect(() => {
@@ -17,8 +15,7 @@ function HomeScreen({ navigation, route }) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.AndroidSafeArea} 
-      className="bg-white pt-5">
+    <SafeAreaView className="bg-white pt-6">
       <View className="flex-row space-x-2 pb-4 px-2">
         <Image
           className="h-7 w-7 bg-gray-300 p-4 rounded-full"
@@ -29,17 +26,17 @@ function HomeScreen({ navigation, route }) {
 
         <View className="flex-1">
           <Text className="text-gray-400 font-bold text-xs">Deliver Now</Text>
-          <Text className="font-bold text-xl">Current Location</Text>
+          <View className="flex-row">
+            <Text className="font-bold text-xl">Current Location</Text>
+            <ChevronDownIcon className="w-20" color="#00CCBB" />
+          </View>
         </View>
+        <UserIcon className="w-35" color="#00CCBB"/>
       </View>
+      
     </SafeAreaView>
   );
 }
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
