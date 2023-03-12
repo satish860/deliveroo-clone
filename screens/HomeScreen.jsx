@@ -4,8 +4,9 @@ import {
   Text,
   SafeAreaView,
   Image,
+  TextInput,
 } from "react-native";
-import { ChevronDownIcon,UserIcon } from "react-native-heroicons/outline";
+import { ChevronDownIcon,UserIcon,AdjustmentsVerticalIcon,MagnifyingGlassIcon } from "react-native-heroicons/outline";
 
 function HomeScreen({ navigation, route }) {
   useEffect(() => {
@@ -15,7 +16,7 @@ function HomeScreen({ navigation, route }) {
   }, []);
 
   return (
-    <SafeAreaView className="bg-white pt-6">
+    <SafeAreaView className="bg-white pt-9">
       <View className="flex-row space-x-2 pb-4 px-2">
         <Image
           className="h-7 w-7 bg-gray-300 p-4 rounded-full"
@@ -33,7 +34,16 @@ function HomeScreen({ navigation, route }) {
         </View>
         <UserIcon className="w-35" color="#00CCBB"/>
       </View>
-      
+      <View className="flex-row Items-center space-x-2 pb-2 mx-4">
+        <View className="flex-1 flex-row space-x-2 bg-gray-200 p-3">
+          <MagnifyingGlassIcon className="w-20" color="grey"></MagnifyingGlassIcon>
+          <TextInput
+            placeholder="Resturants and Cusines"
+            keyboardType="default"
+          ></TextInput>
+        </View>
+        <AdjustmentsVerticalIcon className="w-20" color="#00CCBB"></AdjustmentsVerticalIcon>
+      </View>
     </SafeAreaView>
   );
 }
