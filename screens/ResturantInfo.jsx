@@ -72,12 +72,12 @@ function ResturantInfo({ navigation, route }) {
       {/* Menu Header */}
       <View className="pt-2 px-2">
         <Text className="font-bold text-xl">Menu</Text>
-        <Dishrow id="1" />
-        <Dishrow id="2" />
-        <Dishrow id="3" />
-        <Dishrow id="4" />
-        <Dishrow id="5" />
-        <Dishrow id="6" />
+        <Dishrow id="1" price={10} />
+        <Dishrow id="2" price={10} />
+        <Dishrow id="3" price={10} />
+        <Dishrow id="4" price={10} />
+        <Dishrow id="5" price={10} />
+        <Dishrow id="6" price={10} />
       </View>
     </ScrollView>
   );
