@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { TouchableOpacity, Image, Text, View } from "react-native";
 import { StarIcon, MapPinIcon } from "react-native-heroicons/solid";
@@ -14,8 +15,16 @@ function Resturant({
   long,
   lat,
 }) {
+  const navigate = useNavigation();
+  const HandlePress = () => {
+    navigate.navigate("ResturantInfo");
+  };
+
   return (
-    <TouchableOpacity className="bg-white mr-3 shadow">
+    <TouchableOpacity
+      onPress={() => HandlePress()}
+      className="bg-white mr-3 shadow"
+    >
       <Image
         source={{
           uri: imgurl,
