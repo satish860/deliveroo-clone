@@ -18,7 +18,11 @@ function Resturant({
   const navigate = useNavigation();
   const HandlePress = () => {
     navigate.navigate("ResturantInfo",{
-      imgurl
+      imgurl,
+      title,
+      rating,
+      genre,
+      address
     });
   };
 
@@ -43,7 +47,7 @@ function Resturant({
         </View>
         <View className="flex-row items-center space-x-1">
           <MapPinIcon color="grey" opacity="0.4" size="22"></MapPinIcon>
-          <Text className="text-xs text-gray-500">NearBy</Text>
+          <Text className="text-xs text-gray-500">NearBy.{address}</Text>
         </View>
       </View>
     </TouchableOpacity>
