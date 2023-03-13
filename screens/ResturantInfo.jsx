@@ -4,7 +4,11 @@ import {
   StarIcon,
   MapPinIcon,
   ArrowLeftIcon,
+  QuestionMarkCircleIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "react-native-heroicons/solid";
+import Dishrow from "./components/Dishrow";
 
 function ResturantInfo({ navigation, route }) {
   useEffect(() => {
@@ -13,10 +17,10 @@ function ResturantInfo({ navigation, route }) {
     });
   }, []);
 
-  const { imgurl, title, rating, genre,address } = route.params;
+  const { imgurl, title, rating, genre, address } = route.params;
 
   return (
-    <ScrollView>
+    <ScrollView className="flex-1">
       {/* Header Page */}
       <View className="relative">
         <Image
@@ -48,7 +52,32 @@ function ResturantInfo({ navigation, route }) {
               <Text className="text-xs text-gray-500">NearBy .{address}</Text>
             </View>
           </View>
+          <View>
+            {/* Replace it with Short Description */}
+            <Text className="text-sm text-gray-500 pb-4 pt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+              inventore culpa voluptates? Ut aperiam corrupti aliquam, ducimus
+            </Text>
+          </View>
         </View>
+      </View>
+
+      {/* Have Food Allergy Section */}
+      <View className="flex-row items-center bg-white space-x-2 p-4 border-y border-gray-300">
+        <QuestionMarkCircleIcon size="20" color="gray"></QuestionMarkCircleIcon>
+        <Text className="flex-1 font-bold">Have a Food Allergy?</Text>
+        <ChevronRightIcon size="20" color="#00CCDD" />
+      </View>
+
+      {/* Menu Header */}
+      <View className="pt-2 px-2">
+        <Text className="font-bold text-xl">Menu</Text>
+        <Dishrow />
+        <Dishrow />
+        <Dishrow />
+        <Dishrow />
+        <Dishrow />
+        <Dishrow />
       </View>
     </ScrollView>
   );
