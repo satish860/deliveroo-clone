@@ -17,7 +17,9 @@ function Resturant({
 }) {
   const navigate = useNavigation();
   const HandlePress = () => {
-    navigate.navigate("ResturantInfo");
+    navigate.navigate("ResturantInfo",{
+      imgurl
+    });
   };
 
   return (
