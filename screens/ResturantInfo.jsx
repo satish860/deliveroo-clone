@@ -5,7 +5,6 @@ import {
   MapPinIcon,
   ArrowLeftIcon,
   QuestionMarkCircleIcon,
-  ChevronLeftIcon,
   ChevronRightIcon,
 } from "react-native-heroicons/solid";
 import Dishrow from "./components/Dishrow";
